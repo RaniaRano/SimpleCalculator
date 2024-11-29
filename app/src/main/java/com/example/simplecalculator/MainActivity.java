@@ -7,13 +7,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
+//import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.simplecalculator.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public int getIntFromEditText(EditText editText){
-        if(editText.getText().toString().equals("")){ // FÖR ATT VETA OM NUMBER1 TOM ELLER INTE
+        if(editText.getText().toString().isEmpty()){ // FÖR ATT VETA OM NUMBER1 TOM ELLER INTE
             Toast.makeText(this, "Enter number", Toast.LENGTH_SHORT).show();
             return 0;
         } else
@@ -57,14 +53,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         num1 = getIntFromEditText(editTextN1);
         num2 = getIntFromEditText(editTextN2);
         if (view.getId() == R.id.btn_add) {
-            textView.setText("Answer = " + (num1 + num2));
+            textView.setText(getString(R.string.answer_format_float, num1 + num2));
         } else if (view.getId() == R.id.btn_sub) {
-            textView.setText("Answer = " + (num1 - num2));
+            textView.setText(getString(R.string.answer_format_float, num1 - num2));
         } else if (view.getId() == R.id.btn_mul) {
-            textView.setText("Answer = " + (num1 * num2));
+            textView.setText(getString(R.string.answer_format_float, num1 * num2));
         } else if (view.getId() == R.id.btn_div) {
-            textView.setText("Answer = " + ((float) num1 / (float) num2));
+            textView.setText(getString(R.string.answer_format_float, (float) num1 / (float) num2));
         }
+
+        // if (view.getId() == R.id.btn_add) {
+         //   textView.setText("Answer = " + (num1 + num2));
+        //} else if (view.getId() == R.id.btn_sub) {
+          //  textView.setText("Answer = " + (num1 - num2));
+        //} else if (view.getId() == R.id.btn_mul) {
+          //  textView.setText("Answer = " + (num1 * num2));
+        //} else if (view.getId() == R.id.btn_div) {
+          //  textView.setText("Answer = " + ((float) num1 / (float) num2));
 
     }
 

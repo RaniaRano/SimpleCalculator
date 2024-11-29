@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">Simple Calculator</string>
-    <string name="answer_format">Answer = %1$s</string>
-    <string name="answer_format_float">Answer = %1$d</string>
 </resources>
 

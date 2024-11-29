@@ -6,8 +6,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-//import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -61,15 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view.getId() == R.id.btn_div) {
             textView.setText(getString(R.string.answer_format_float, (float) num1 / (float) num2));
         }
-
-        // if (view.getId() == R.id.btn_add) {
-         //   textView.setText("Answer = " + (num1 + num2));
-        //} else if (view.getId() == R.id.btn_sub) {
-          //  textView.setText("Answer = " + (num1 - num2));
-        //} else if (view.getId() == R.id.btn_mul) {
-          //  textView.setText("Answer = " + (num1 * num2));
-        //} else if (view.getId() == R.id.btn_div) {
-          //  textView.setText("Answer = " + ((float) num1 / (float) num2));
 
     }
 
